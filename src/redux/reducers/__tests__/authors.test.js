@@ -6,7 +6,7 @@ import { fakeAuthor } from "../../../testUtils";
 describe("authors reducer", () => {
   const initialState = {
     authors: [],
-    loading: true
+    loading: true,
   };
 
   it("should return the initial state", () => {
@@ -21,7 +21,7 @@ describe("authors reducer", () => {
 
     const newState = reducer(initialState, {
       type: SET_AUTHORS,
-      payload: authors
+      payload: authors,
     });
     expect(newState.authors).toBe(authors);
     expect(newState.loading).toBe(false);

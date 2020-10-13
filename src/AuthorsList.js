@@ -1,21 +1,22 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
 // Components
 import AuthorCard from "./AuthorCard";
 import SearchBar from "./SearchBar";
 
-const AuthorsList = props => {
+const AuthorsList = (props) => {
   const [query, setQuery] = useState("");
 
   const filterAuthors = () => {
-    return props.authors.filter(author => {
+    return props.authors.filter((author) => {
       return `${author.first_name} ${author.last_name}`
         .toLowerCase()
         .includes(query.toLowerCase());
     });
   };
 
-  const authorCards = filterAuthors().map(author => (
+  const authorCards = filterAuthors().map((author) => (
     <AuthorCard key={author.first_name + author.last_name} author={author} />
   ));
 
@@ -27,5 +28,10 @@ const AuthorsList = props => {
     </div>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    authors: state.authors,
+  };
+};
 
-export default AuthorsList;
+export default connect(mapStateToProps)(AuthorsList);
