@@ -17,5 +17,9 @@ const Sidebar = () => (
     </section>
   </div>
 );
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authors: () => dispatch({ type: "SET_AUTHORS" }),
+  };
+};
 export default Sidebar;

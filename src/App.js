@@ -15,14 +15,14 @@ const instance = axios.create({
 
 const App = () => {
   //const [authors, setAuthors] = useState([]);
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState([]);
+  //const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    /* const fetchAllAuthors = async () => {
+  /*useEffect(() => {
+     const fetchAllAuthors = async () => {
       const res = await instance.get("/api/authors/");
       return res.data;
-    };*/
+    };
 
     const fetchAllBooks = async () => {
       const res = await instance.get("/api/books/");
@@ -41,7 +41,7 @@ const App = () => {
       }
     };
     fetchAll();
-  }, []);
+  }, []);*/
 
   const getView = () => {
     if (loading) {
@@ -57,7 +57,7 @@ const App = () => {
             <AuthorsList />
           </Route>
           <Route path="/books/:bookColor?">
-            <BookList books={books} />
+            <BookList />
           </Route>
         </Switch>
       );

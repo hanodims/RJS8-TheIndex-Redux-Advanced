@@ -30,7 +30,7 @@ const AuthorsList = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    authors: state.authors,
+    authors: state.rootAuthor.authors,
   };
 };
 

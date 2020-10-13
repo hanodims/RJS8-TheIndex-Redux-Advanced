@@ -1,7 +1,8 @@
 import { SET_AUTHORS } from "../actions/actionType";
+
 const initialState = {
   authors: [],
-  newAuthorId: null,
+  //newAuthorId: null,
 };
 
 export default (state = initialState, action) => {
